@@ -19,6 +19,7 @@ export const intersection = {
 }
 export const random = {
 	withSeed: randomWithSeed,
+	num: randomNum,
 	int: randomInt,
 	boolean: random_boolean,
 	asbOrNot: random_asbOrNot,
@@ -34,6 +35,7 @@ export const other = {
 	copyText,
 	downloadFile,
 	wait,
+	pingPong,
 }
 
 
@@ -210,6 +212,14 @@ export function random_boolean(rnd = Math.random)
     return rnd() < 0.5;
 }
 
+export function randomNum(max: number): number;
+export function randomNum(min: number, max: number, rnd?: () => number): number;
+export function randomNum(maxmin: number, max?: number, rnd = Math.random)
+{
+	if (max != undefined)
+		return rnd() * (maxmin - max) + max;
+	return rnd() * maxmin;
+}
 export function randomInt(max: number): number;
 export function randomInt(min: number, max: number, rnd?: () => number): number;
 export function randomInt(maxmin: number, max?: number, rnd = Math.random)
@@ -306,6 +316,11 @@ export async function wait(t: number)
 export function hslColor(h: number, s: number, l: number)
 {
 	return `hsl(${h}, ${s}%, ${l}%)`;
+}
+export function pingPong(t: number)
+{
+	const _t = t % 1;
+	return (_t > 0.5 ? 1 - _t : _t);
 }
 
 
