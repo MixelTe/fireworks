@@ -13,11 +13,11 @@ let stop = false;
 let removeSnowflakes = false;
 const snowflakes: Particle[] = [];
 
-// TEMP
-const overlay = document.querySelector(".overlay");
-if (overlay && overlay.parentElement) overlay.parentElement.removeChild(overlay);
-startFireworks();
-// TEMP
+// // TEMP
+// const overlay = document.querySelector(".overlay");
+// if (overlay && overlay.parentElement) overlay.parentElement.removeChild(overlay);
+// startFireworks();
+// // TEMP
 
 Lib.addButtonListener("btn-start", () =>
 {
