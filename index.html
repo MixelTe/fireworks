@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#00002d" />
+	<link rel="apple-touch-icon" href="imgs/favicon192.png" />
+	<link rel="manifest" href="manifest.json" />
+	<title>Фейерверки</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neucha|Rubik+Doodle+Shadow">
+	<link rel="stylesheet" type="text/css" href="popup.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="out/main.js" type="module"></script>
+</head>
+
+<body class="hidden animateBorder">
+	<canvas id="canvas"></canvas>
+	<canvas id="canvas_overlay"></canvas>
+	<div class="overlay">
+		<div class="block title" id="title">
+			<div class="block-corners">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="block-parts">
+				<div><div></div><div></div></div>
+				<div><div></div><div></div></div>
+			</div>
+			<div class="block block-inner">
+				<div class="block-corners">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="block-parts">
+					<div><div></div><div></div></div>
+					<div><div></div><div></div></div>
+				</div>
+				<div class="block-body">
+				</div>
+			</div>
+			<div class="block-body">
+				<span id="date">
+					<div id="date-inner">
+						<script>
+							document.getElementById("date-inner").innerText = (() => {
+							const date = new Date(2023, 10, 15);
+							let year = date.getFullYear();
+							if (date.getMonth() >= 10) year++;
+							return year;
+						})();
+						</script>
+					</div>
+				</span>
+			</div>
+		</div>
+		<div class="btn-start-outer">
+			<button class="btn-start" id="btn-start">
+				<span>Пуск!</span>
+			</button>
+		</div>
+		<a class="btn-gh" href="https://github.com/MixelTe/fireworks" target="_blank">
+			<img src="./imgs/github.svg" alt="Github">
+		</a>
+	</div>
+</body>
+
+</html>
