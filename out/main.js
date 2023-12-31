@@ -21,6 +21,7 @@ Lib.addButtonListener("btn-start", () => {
     animateBorder = -3;
     document.body.classList.add("animateBorder");
     document.body.classList.add("hide");
+    document.body.requestFullscreen();
     setTimeout(() => {
         const overlay = document.querySelector(".overlay");
         if (overlay && overlay.parentElement)
