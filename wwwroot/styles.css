@@ -288,3 +288,24 @@ canvas {
 	z-index: 10;
 	pointer-events: none;
 }
+
+.btn-gh {
+	position: fixed;
+	left: min(1rem, 2vw);
+	bottom: min(1rem, 2vw);
+	padding: 0;
+	cursor: pointer;
+	transition: opacity 750ms 2.5s;
+	opacity: 0.5;
+}
+.btn-gh img {
+	width: min(2.2rem, 8vw);
+	height: auto;
+}
+.hidden .btn-gh {
+	opacity: 0;
+}
+.hide .btn-gh {
+	transition-delay: 0s;
+	opacity: 0;
+}
