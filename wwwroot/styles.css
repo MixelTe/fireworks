@@ -38,6 +38,8 @@ canvas {
 	flex-direction: column;
 	overflow-y: auto;
 	overflow-x: hidden;
+	padding-top: 2rem 0;
+	padding: 2rem 0;
 }
 .hidden .overlay,
 .hide .overlay {
@@ -308,4 +310,13 @@ canvas {
 .hide .btn-gh {
 	transition-delay: 0s;
 	opacity: 0;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: rgb(85, 85, 255);
+	border-radius: 8px;
 }
