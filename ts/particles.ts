@@ -22,7 +22,7 @@ export function createParticle(p: RandomParticle): Particle
 export function drawParticle(ctx: CanvasRenderingContext2D, particle: Particle)
 {
 	ctx.save();
-	ctx.globalAlpha = particle.a;
+	ctx.globalAlpha = particle.a < 0 ? 1 : particle.a;
 	ctx.fillStyle = particle.c;
 	ctx.beginPath();
 	ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
