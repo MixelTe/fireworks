@@ -50,7 +50,6 @@
 						<script>
 							document.getElementById("date-inner").innerText = (() => {
 							const date = new Date(2023, 10, 15);
-							console.log(date);
 							let year = date.getFullYear();
 							if (date.getMonth() >= 10) year++;
 							return year;
@@ -61,7 +60,7 @@
 			</div>
 		</div>
 		<div class="btn-start-outer">
-			<button class="btn-start">
+			<button class="btn-start" id="btn-start">
 				<span>Пуск!</span>
 			</button>
 		</div>

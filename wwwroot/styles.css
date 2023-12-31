@@ -9,15 +9,23 @@ html {
 
 body {
 	display: flex;
-	min-height: 100%;
+	width: 100vw;
+	width: 100dvw;
+	height: 100vh;
+	height: 100dvh;
 	margin: 0;
 	font-family: "Neucha", Arial, Helvetica, sans-serif;
 	background-color: #00002d;
 }
 
+canvas {
+	width: 10px;
+	height: 10px;
+}
+
 .overlay {
 	--blockC: #00002d;
-	--block-borderC: tomato;
+	--block-borderC: hsl(210, 100%, 64%);
 	--block-borderW: min(6px, 0.6vw);
 	--block-R: min(8vw, 4rem);
 	--block-borderR: min(8vw, 4rem);
@@ -29,8 +37,10 @@ body {
 	gap: calc(min(4vw, 2rem) + min(8vw, 4rem) / 2);
 	flex-direction: column;
 	overflow-y: auto;
+	overflow-x: hidden;
 }
-.hidden .overlay {
+.hidden .overlay,
+.hide .overlay {
 	--block-borderC: transparent;
 }
 
@@ -42,6 +52,9 @@ body {
 }
 .animateBorder .block * {
 	transition: border-color 2s 1.25s;
+}
+.animateBorder.hide .block * {
+	transition: border-color 1s 0s;
 }
 .block.title {
 	isolation: isolate;
@@ -207,7 +220,7 @@ body {
 	background-size: calc(var(--_lineW) * 20 - 2px);
 	border-radius: 1.5rem;
 	z-index: -1;
-	animation: btn-start 10s linear infinite;
+	animation: btn-start 8s linear infinite;
 }
 .btn-start::after {
 	filter: blur(5px);
@@ -230,6 +243,11 @@ body {
 	transform: scale(0);
 	opacity: 0;
 }
+.hide .btn-start-outer {
+	transition: transform 500ms 150ms, opacity 250ms 300ms;
+	transform: rotate(360deg) scale(0);
+	opacity: 0;
+}
 
 @keyframes btn-start {
 	to {
@@ -248,6 +266,11 @@ body {
 }
 .hidden #date-inner {
 	transform: scale(0);
+	opacity: 0;
+}
+.hide #date-inner {
+	transition: transform 1.2s, opacity 1s 200ms;
+	transform: scale(1.6);
 	opacity: 0;
 }
 
