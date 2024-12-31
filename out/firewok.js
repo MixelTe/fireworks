@@ -56,7 +56,7 @@ export class Firewok {
         for (let i = 0; i < this.smoke.length; i++) {
             const p = this.smoke[i];
             calcParticle(p, dt);
-            drawParticle(ctx, p);
+            drawParticle(ctx, p, true);
             if (p.a < 0)
                 this.smoke.splice(i, 1);
         }

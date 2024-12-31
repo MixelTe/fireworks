@@ -12,9 +12,9 @@ export function createParticle(p) {
         da: p.da == undefined ? 0 : typeof p.da == "number" ? p.da : randomNum(...p.da),
     };
 }
-export function drawParticle(ctx, particle) {
+export function drawParticle(ctx, particle, fixAlpha = false) {
     ctx.save();
-    ctx.globalAlpha = particle.a < 0 ? 1 : particle.a;
+    ctx.globalAlpha = particle.a < 0 ? (fixAlpha ? 0 : 1) : particle.a;
     ctx.fillStyle = particle.c;
     ctx.beginPath();
     ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
